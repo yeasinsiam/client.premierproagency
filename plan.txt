@@ -1,0 +1,77 @@
+
+
+------------------------------------------( Schemas )
+
+post_categories (Soft Delete)
+------------------
+title
+seo_slug
+
+
+
+
+
+post_tags (soft delete)
+----------------------
+title
+seo_slug
+
+
+
+
+posts
+--------------
+title
+content- longtext
+seo_slug
+seo_meta_title
+seo_meta_description
+seo_meta_keywords
+
+
+        ------------- -> post_categories
+posts---- hasMany
+        ------------- -> post_tags
+
+
+
+
+
+------------------------------------------( Routes )
+
+/blogs - posts page.
+
+/blogs/categories/{postCategory} -- posts page filtered by category.
+
+
+/blog/{post} - post single page.
+
+
+
+-------------------------------------------------- ( Page Layout )
+1) /blogs & /blogs/categories/{postCategory}
+
+
+        categories buttons
+------------------------------------
+            posts list
+-------------------------------------
+            pagination
+
+
+2)  /blog/{post}
+
+
+    thumbnail                   |   All categories and posts counts (section)
+-------------------------------|
+    title (category_name)      |    Popular Tags Sections
+                                |
+    content                    |
+-----------------------------------------------------------------------------
+
+    Related posts Carousel
+--------------------------------------
+
+
+
+1)Custom widget tab navigation.
